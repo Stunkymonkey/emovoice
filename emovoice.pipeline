@@ -5,7 +5,8 @@
 		<load name="audio" depend="ssidialog.dll"/>
 		<load name="graphic" />				
 		<load name="model"/>		
-		<load name="ioput"/>		
+		<load name="ioput"/>
+        <load name="python" />				
 	</register>
 	
 	<gate close="$(audio:loop)">
@@ -96,5 +97,10 @@
 		<area pos="400,300,400,300">plot*</area>		
 		<area pos="800,300,400,300">monitor*</area>
 	</object>	
+    
+    
+    <object create="PythonObject" script="events" syspath=".">      
+        <listen address="emotion@audio"/>
+    </object>   
 	
 </pipeline>
